@@ -1775,6 +1775,11 @@ video {
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#EBEBEB\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 235 235 / var(--tw-bg-opacity));
+}
+
 .bg-\[conic-gradient\(at_top\2c _var\(--tw-gradient-stops\)\)\] {
   background-image: conic-gradient(at top, var(--tw-gradient-stops));
 }
@@ -2418,6 +2423,10 @@ video {
 @media (min-width: 740px) {
   .md\:w-\[25\%\] {
     width: 25%;
+  }
+
+  .md\:w-\[15\%\] {
+    width: 15%;
   }
 }
 
