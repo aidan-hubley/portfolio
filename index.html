@@ -11,25 +11,26 @@
             setTimeout(() => {
                 var image = document.getElementById('loading' + i);
                 image.style.transition = 'transform 300ms';
-                image.style.transform = 'scale(1, 1)';
-                setTimeout(() => {
-                    image.style.transition = 'transform 300ms';
-                    image.style.transformOrigin = 'top';
-                    image.style.transform = 'scale(1, 0)';
-                    i++;
-                    if (i < 6) {
-                        loadingAnimation(i);
-                    } else {
-                        image = document.getElementById('loading' + i);
-                        console.log(image);
-                        setTimeout(() => {
-                            image.style.transition = 'transform 300ms';
-                            image.style.transform = 'translateX(35vw) translateY(-30vh)';
-                            window.location.href = './home.html';
-                        }, 1000);
-                    }
-                }, 200);
-            }, 600);
+                image.style.transformOrigin = 'top';
+                image.style.transform = 'scale(1, 0)';
+                i++;
+                if (i < 6) {
+                    loadingAnimation(i);
+                } else {
+                    setTimeout(() => {
+                        profileAnimation(i);                    
+                    }, 800);
+                }
+            }, 800);
+        }
+
+        function profileAnimation(i) {
+            image = document.getElementById('loading' + i);
+            image.style.transition = 'transform 300ms';
+            image.style.transform = 'translateX(35vw) translateY(-30vh)';
+            setTimeout(() => {
+                window.location.href = './home.html';
+            }, 2000);
         }
 
         window.addEventListener('load', () => {
@@ -38,15 +39,15 @@
     </script>
 </head>
 
-<body class="bg-[#EBEBEB]" style="overflow: hidden;">
-    <div id="loading" class="w-screen h-screen flex justify-center items-center">
-        <img id="loading0" class="lg:w-[15%] w-[25%] absolute z-[7]" src="./assets/load0.png">
-        <img id="loading1" class="lg:w-[15%] w-[25%] absolute z-[6]" src="./assets/load1.png">
-        <img id="loading2" class="lg:w-[15%] w-[25%] absolute z-[5]" src="./assets/load2.png">
-        <img id="loading3" class="lg:w-[15%] w-[25%] absolute z-[4]" src="./assets/load3.png">
-        <img id="loading4" class="lg:w-[15%] w-[25%] absolute z-[3]" src="./assets/load4.png">
-        <img id="loading5" class="lg:w-[15%] w-[25%] absolute z-[2]" src="./assets/load5.png">
-        <img id="loading6" class="lg:w-[15%] w-[25%] absolute z-[1]" src="./assets/load6.png">
+<body class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-RaisinBlack via-10% via-EnglishViolet to-Khaki" style="overflow: hidden;">
+        <div id="loading" class="w-screen h-screen flex justify-center items-center pt-10 px-10">
+        <img id="loading0" class="lg:w-[15%] md:w-[25%] w-[35%] absolute z-[7]" src="./assets/load0.png">
+        <img id="loading1" class="lg:w-[15%] md:w-[25%] w-[35%] absolute z-[6]" src="./assets/load1.png">
+        <img id="loading2" class="lg:w-[15%] md:w-[25%] w-[35%] absolute z-[5]" src="./assets/load2.png">
+        <img id="loading3" class="lg:w-[15%] md:w-[25%] w-[35%] absolute z-[4]" src="./assets/load3.png">
+        <img id="loading4" class="lg:w-[15%] md:w-[25%] w-[35%] absolute z-[3]" src="./assets/load4.png">
+        <img id="loading5" class="lg:w-[15%] md:w-[25%] w-[35%] absolute z-[2]" src="./assets/load5.png">
+        <img id="loading6" class="lg:w-[15%] md:w-[25%] w-[35%] absolute z-[1]" src="./assets/load6.png">
     </div>
     <!-- <span class="absolute bottom-0 left-0 p-2 text-xs text-gray-400">Aidan Hubley</span>
     <span class="absolute bottom-0 right-0 p-2 text-xs text-gray-400">v0.0.1</span> -->
