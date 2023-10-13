@@ -13,47 +13,45 @@
     <script>
         window.addEventListener('load', () => {
             var image = document.getElementById('loading6');
-            image.style.transition = 'transform 0ms';
-            image.style.transform = 'translateX(35vw) translateY(-30vh)';
         });
 
         async function typeWriter() {
                 var node = document.querySelector("#hello")
 
-                await sleep(2000)
-                console.log(node)
+                await sleep(1500)
                 node.innerText = ""
 
                 while (true) {
                     await node.type('"Hello, ')
                     await node.type('World!"')
-                    await sleep(2000)
+                    await sleep(1500)
                     await node.type(' - Aidan Hubley')
                     await sleep(2000)
+                    await node.newline()
                     await node.type(' (Computer Science)')
-                    await sleep(2000)
-                    await node.delete(' (Computer Science)')
-                    await sleep(2000)
-                    await node.type(' (Intern)')
-                    await sleep(2000)
-                    await node.delete(' (Intern)')
-                    await sleep(2000)
-                    await node.type(' (Cybersecurity)')
-                    await sleep(2000)
-                    await node.delete(' (Cybersecurity)')
-                    await sleep(2000)
-                    await node.type(' (SOC Analyst)')
-                    await sleep(2000)
-                    await node.delete(' (SOC Analyst)')
-                    await sleep(2000)
-                    await node.type(' (Security Automation Dev)')
-                    await sleep(2000)
-                    await node.delete(' (Security Automation Dev)')
-                    await sleep(2000)
+                    await sleep(1500)
+                    await node.delete('(Computer Science)')
+                    await sleep(1500)
+                    await node.type('(Intern)')
+                    await sleep(1500)
+                    await node.delete('(Intern)')
+                    await sleep(1500)
+                    await node.type('(Cybersecurity)')
+                    await sleep(1500)
+                    await node.delete('(Cybersecurity)')
+                    await sleep(1500)
+                    await node.type('(SOC Analyst)')
+                    await sleep(1500)
+                    await node.delete('(SOC Analyst)')
+                    await sleep(1500)
+                    await node.type('(Security Automation Dev)')
+                    await sleep(1500)
+                    await node.delete('(Security Automation Dev)')
+                    await sleep(1500)
                     await node.delete(' - Aidan Hubley')
-                    await sleep(2000)
-                    await node.delete('"Hello, World!"')
-                    await sleep(2000)
+                    await sleep(1500)
+                    await node.delete('"Hello, World!"""')
+                    await sleep(1500)
                 }
             }
 
@@ -77,6 +75,14 @@
                     await sleep(this.typeInterval)
                 }
             }
+
+            async newline() {
+                this.innerText += '\n'
+            }
+
+            async removeNewline() {
+                this.innerText = this.innerText.slice(0, this.innerText.length - 1)
+            }
         }
 
         customElements.define('type-async', TypeAsync, { extends: 'span' })
@@ -87,17 +93,23 @@
     </script>
 </head>
 
-<body class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-RaisinBlack via-10% via-EnglishViolet to-Khaki" style="overflow: hidden;">
-    <div id="loading" class="w-screen h-screen flex justify-center items-center pt-10 px-10">
-        <div class="absolute top-10 left-10" style=" font-family: 'Open Sans', sans-serif">
-            <span is="type-async" id="hello"></span>
-            <span class="blinking-cursor">_</span>
+<body class="bg-gradient-to-br from-gray-700 via-gray-900 to-black">
+    <div id="loading" class="w-screen h-screen flex justify-center items-center p-10">
+        <div class="absolute top-[10%] text-Khaki" style="font-family: 'Open Sans', sans-serif">
+            <span class="text-xl" is="type-async" id="hello"></span>
+            <span class="text-xl blinking-cursor">_</span>
         </div>
-        <img id="loading6" class="lg:w-[15%] md:w-[25%] w-[35%]" src="./assets/load6.png">
-       
-        
+
+        <img id="loading6" class="absolute top-[25%] xl:w-[15%] lg:w-[15%] md:w-[23%] sm:w-[40%] xs:w-[50%] w-[60%]" src="./assets/load6.png">
+
+        <div class="animate-bounce absolute bottom-[10%] justify-center items-center flex">
+            <div class="rounded-full  border-[#B0A990]">
+                <ion-icon name="arrow-up-outline" size="large" style="color: #B0A990"></ion-icon>
+            </div>
+        </div>
+
         <div class="absolute bottom-0 w-screen lg:h-12 h-12">
-            <div class="w-[100%] h-[100%] pt-1 border-t-4 bg-RaisinBlack border-EnglishViolet rounded-t-xl flex flex-row" id="footer-element">
+            <div class="w-[100%] h-[100%] pt-1 border-t-4 bg-gray-900 border-Khaki rounded-t-xl flex flex-row" id="footer-element">
                 <div class="w-[33%] inline-block align-middle text-center footer-item"><a href="https://messiahcis.slack.com/ah1632@messiah.edu"><ion-icon name="logo-slack" size="large" style="color: #B0A990;"></ion-icon></a></div>
                 <div class="w-[33%] inline-block align-middle text-center footer-item"><a href="https://github.com/aidan-hubley"><ion-icon name="logo-github" size="large" style="color: #B0A990;"></ion-icon></a></div>
                 <div class="w-[33%] inline-block align-middle text-center footer-item"><a href="https://www.linkedin.com/in/aidan--"><ion-icon name="logo-linkedin" size="large" style="color: #B0A990;"></ion-icon></a></div>
