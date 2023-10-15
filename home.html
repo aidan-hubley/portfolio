@@ -18,9 +18,10 @@
         async function typeWriter() {
                 var node = document.querySelector("#hello")
 
-                await sleep(1500)
+                await sleep(0)
                 node.innerText = ""
-
+                await sleep(1000)
+            
                 while (true) {
                     await node.type('"Hello, ')
                     await node.type('World!"')
@@ -92,28 +93,30 @@
 
     </script>
 </head>
-
 <body class="bg-gradient-to-br from-gray-700 via-gray-900 to-black">
     <div id="loading" class="w-screen h-screen flex justify-center items-center p-10">
         <div class="absolute top-[10%] text-Khaki" style="font-family: 'Open Sans', sans-serif">
-            <span class="text-xl" is="type-async" id="hello"></span>
+            <span class="text-xl" is="type-async" id="hello">"Hello, World" - Aidan Hubley<br>(Security Automation Dev)</span>
             <span class="text-xl blinking-cursor">_</span>
         </div>
+        
+        <div class="absolute top-[25%] border-10 border-yellow xl:w-[15%] lg:w-[15%] md:w-[23%] sm:w-[30%] xs:w-[40%] w-[50%] m-[5%] z-[1]" style="filter: blur(10px);"></div>
+        <img class="absolute top-[25%] xl:w-[15%] lg:w-[15%] md:w-[23%] sm:w-[30%] xs:w-[40%] w-[50%] z-[0]" src="./assets/load6.png">
 
-        <img id="loading6" class="absolute top-[25%] xl:w-[15%] lg:w-[15%] md:w-[23%] sm:w-[40%] xs:w-[50%] w-[60%]" src="./assets/load6.png">
-
-        <div class="animate-bounce absolute bottom-[10%] justify-center items-center flex">
-            <div class="rounded-full  border-[#B0A990]">
-                <ion-icon name="arrow-up-outline" size="large" style="color: #B0A990"></ion-icon>
+        <div class="absolute bottom-[18%]">
+            <div class="flex flex-row gap-x-10">
+                <div class="h-[100] w-[50%] inline-block align-middle justify-center text-center footer-item"><a
+                        href="https://github.com/aidan-hubley"><ion-icon name="logo-github" size="large"
+                            style="color: #B0A990;"></ion-icon></a></div>
+                <div class="h-[100] w-[50%] inline-block align-middle justify-center text-center footer-item"><a
+                        href="https://www.linkedin.com/in/aidan--"><ion-icon name="logo-linkedin" size="large"
+                            style="color: #B0A990;"></ion-icon></a></div>
             </div>
         </div>
 
-        <div class="absolute bottom-0 w-screen lg:h-12 h-12">
-            <div class="w-[100%] h-[100%] pt-1 border-t-4 bg-gray-900 border-Khaki rounded-t-xl flex flex-row" id="footer-element">
-                <div class="w-[33%] inline-block align-middle text-center footer-item"><a href="https://messiahcis.slack.com/ah1632@messiah.edu"><ion-icon name="logo-slack" size="large" style="color: #B0A990;"></ion-icon></a></div>
-                <div class="w-[33%] inline-block align-middle text-center footer-item"><a href="https://github.com/aidan-hubley"><ion-icon name="logo-github" size="large" style="color: #B0A990;"></ion-icon></a></div>
-                <div class="w-[33%] inline-block align-middle text-center footer-item"><a href="https://www.linkedin.com/in/aidan--"><ion-icon name="logo-linkedin" size="large" style="color: #B0A990;"></ion-icon></a></div>
-            </div>
+        <div class="absolute bottom-0 w-screen h-20 py-2 border-t-4 bg-gray-900 border-BattleshipGrey text-Khaki rounded-t-xl" id="footer-element">
+            <div class="h-[50%] w-[100%] align-middle justify-center text-center footer-item">Message: &nbsp; 717-636-3359</div>
+            <div class="h-[50%] w-[100%] align-middle justify-center text-center footer-item">Contact:&nbsp; aidanhub20@gmail.com</div>   
         </div>
     </div>
     <!-- <span class="absolute bottom-0 left-0 p-2 text-xs text-gray-400">Aidan Hubley</span>
